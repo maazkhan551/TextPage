@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Textform from './components/Textform'
-// import Aboutus from './components/Aboutus'
+import Aboutus from './components/Aboutus'
 import Alert from './components/Alert'
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode,setMode] = useState('white')
@@ -26,7 +26,7 @@ function App() {
   }
   return (
     <>
-      {/* <Router> */}
+      <Router>
       <Navbar 
         Name="Maaz" 
         about="About Maaz" 
@@ -36,12 +36,12 @@ function App() {
       />
 
       <Alert alert={alert} />
-      <Textform showAlert={showAlert} contact="Enter Text to analyze" mode={mode} />
-      {/* <Routes>
+      
+      <Routes>
         <Route path="/aboutus" element={<Aboutus mode={mode} />} />
-        <Route path="/" element={} />
-      </Routes> */}
-    {/* </Router> */}
+        <Route path="/" element={<Textform showAlert={showAlert} contact="Enter Text to analyze" mode={mode} />} />
+      </Routes> 
+     </Router>
     </>
   )
 }

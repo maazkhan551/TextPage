@@ -7,7 +7,7 @@ export default function about(props) {
   const [con2V,setcon2] = useState(false)
   const myColor = {
     color: props.mode == "white" ? "black" : "white",
-    backgroundColor: props.mode
+    backgroundColor: props.mode==="red"?"#660B05":props.mode==="blue"?"#1A2A80":props.mode==="green"?"#08CB00":props.mode==="black"?"#393E46":"bg-amber-100"
   }
   return (
     <div className='w-[700px] mx-auto my-20 border-[#333446] border-2' style={myColor}>
@@ -29,7 +29,7 @@ export default function about(props) {
           )
         }
       </div>
-      <button className='bg-blue-900 mx-20 mb-10 rounded-2xl w-[150px]' >{btnText}</button>
+      
     </div>
   )
 }
